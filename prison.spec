@@ -21,6 +21,7 @@ BuildRequires:	ninja
 BuildRequires:	extra-cmake-modules5
 BuildRequires:	pkgconfig(libqrencode)
 BuildRequires:	pkgconfig(libdmtx)
+BuildRequires:	cmake(Qt5Test)
 BuildRequires:	qt5-devel
 
 %description
