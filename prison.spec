@@ -7,18 +7,16 @@ Summary:	Prison is a Qt based barcode abstraction layer/library
 Name:		prison
 Group:		Development/C++
 Version:	1.2.0
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 License:	MIT
 Url:		https://projects.kde.org/projects/kdesupport/prison
 %if %git
 # git://anongit.kde.org/prison
 Source0:	%{name}-%{git}.tar.xz
 %else
-Source0:	ftp://ftp.kde.org/pub/kde/stable/prison/1.1/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/stable/prison/1.1/src/%{name}-%{version}.tar.xz
 %endif
-BuildRequires:	cmake
-BuildRequires:	ninja
-BuildRequires:	extra-cmake-modules5
+BuildRequires:	cmake(ECM)
 BuildRequires:	pkgconfig(libqrencode)
 BuildRequires:	pkgconfig(libdmtx)
 BuildRequires:	cmake(Qt5Test)
@@ -60,11 +58,10 @@ Development files for applications that use %{name}.
 
 %prep
 %setup -q
-%cmake -G Ninja \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+%cmake_kde5
 
 %build
-ninja -C build
+%ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja -C build install
+%ninja_install -C build
