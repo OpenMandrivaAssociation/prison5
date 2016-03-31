@@ -1,7 +1,7 @@
 %define major 1
 %define libname %mklibname KF5Prison %{major}
 %define devname %mklibname KF5Prison -d
-%define git 20151222
+%define git 20160331
 
 Summary:	Prison is a Qt based barcode abstraction layer/library
 Name:		prison
