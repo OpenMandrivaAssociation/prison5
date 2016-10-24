@@ -1,4 +1,4 @@
-%define major 1
+%define major 5
 %define libname %mklibname KF5Prison %{major}
 %define devname %mklibname KF5Prison -d
 %define git 20161024
@@ -55,7 +55,7 @@ Development files for applications that use %{name}.
 
 %files -n %{devname}
 %doc LICENSE
-%{_includedir}/KF5/PRISON
+%{_includedir}/KF5/prison
 %{_includedir}/KF5/prison_version.h
 %{_libdir}/cmake/KF5Prison
 %{_libdir}/libKF5Prison.so
